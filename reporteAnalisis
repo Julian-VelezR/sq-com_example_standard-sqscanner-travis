@@ -1,0 +1,50 @@
+public class prueba {
+public int metodo1(int dat, int n){
+int temp=0, aux=0, temp2=0;
+for (int i = n; i > 0; i-=2) {
+temp+=i;
+}
+while( ++temp2 < n) {
+temp++;
+for(int j=0; j<n; j++){
+if(n%2==0){
+temp=dat+1;
+dat+=temp*2/4;
+}
+else{
+temp+=dat+1;
+aux*=n;
+}
+temp++;
+}
+}
+return temp;
+}
+public int metodo2(int dat, int n){
+int temp=0, aux=0;
+for (int i = 1; i <= n; i*=2) {
+for(int j=n; j>= 0;j/=2){
+if(dat>n){
+temp+=dat+1;
+dat+=temp+3;
+}
+temp+=dat-1;
+aux=i+1;
+}
+}
+return temp;
+}
+public void metodoP(int n){
+int [] array = new int [n];
+int resultado=0;
+int i=1;
+do {
+if(array[i]>(n*n))
+metodo2(array[i], n);
+else {
+metodo1(array[i-1], n);
+metodo1(array[i], n);
+}
+i++;
+}while(i<=n-1);
+}
